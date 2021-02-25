@@ -7,37 +7,45 @@
 
 #include "defPacientes.h"
 //TODO Incluir prototipos
+nodo *anexarNodo(info dat, nodo *pt);
+void imprimirActual(nodo *pt);
+nodo *recorrerNodo(nodo *pt);
 
 int main(int argc, char *argv[]){
 	char opcion;
 	info alumno;
-	nodo *inicio=NULL;
+	nodo *inicio;
 	FILE *fp;
-	printf("%i\n",strcmp(argv[1],"-b"));
+	int i=0;
+	
+	inicio=NULL;
 	printf("-----Catálogo de alumnos------\n");
-	if(strcmp(argv[1],"-h")==1){
+	if(strcmp(argv[1],"-t")==0){
 		printf("Leyendo archivo %s\n", argv[2]);
 		fp=fopen(argv[2], "r");
 		if(fp==NULL){
 			printf("Archivo no disponible\n");
 			exit(1);
 		}
-		while(fscanf(fp, " %[^\t] %[^\t] %i %c\n", alumno.nombre, alumno.direccion, &alumno.telefono, &alumno.covid)==4){
-			printf("leer\n");//TODO Solo para verificar que pase
-			//TODO Función para anexar nodo (alumno, inicio)
+		while(fscanf(fp, "%[^\t] %[^\t] %i %c \n", alumno.nombre, alumno.direccion, &alumno.telefono, &alumno.covid)==4){
+			inicio=anexarNodo(alumno, inicio);
+			i++;
+			//TODO Función para colorar en orden alfabético
 		}
+		printf("Se leyeron %i alumnos\n", i);
 		fclose(fp);
-	}else if(strcmp(argv[1],"-b")==1){
+	}else if(strcmp(argv[1],"-b")==0){
 		printf("Recuperando catálogo guardado\n");
-		//TODO Función para recuperar delbinario (puede ser la misma)
+		//TODO Función para recuperar del binario (puede ser la misma)
 	}else{
-		printf("Selección de comando inválida, salienod del programa\n");
+		printf("ERROR: Selección de comando inválida, saliendo del programa\n");
 		return 1;
 	}
 	while(opcion!='s'){
 		printf("---MENU---\n");
 		printf("----------------------------\n");
-		//TODO Función para imprimir nodo actual
+		printf("Datos del alumno:\n");
+		imprimirActual(inicio);
 		printf("----------------------------\n");
 		printf("(r) - Recorrer lista\n");
 		printf("(m) - Modificar paciente actual\n");
@@ -48,7 +56,7 @@ int main(int argc, char *argv[]){
 		switch(opcion){
 			case 'r':
 				printf("\nRecorriendo paciente\n\n");
-				//TODO Función par recorrer paciente
+				inicio=recorrerNodo(inicio);
 				break;
 			case 'm':
 				printf("\nModificar paciente\n\n");

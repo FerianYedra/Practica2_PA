@@ -1,1 +1,4 @@
-Nombre Apellidoss	Direccion	2131	n
+Alejando Gutierrez	Calle 123	89218219	n
+Juan Marco	Cerrada 213	92173820	s
+Alondra MArtinez	Avenida 31	39192911	n
+Maria Flores	Calle 423	93932891	n
