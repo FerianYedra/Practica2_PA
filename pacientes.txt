@@ -1,4 +1,10 @@
 Alejando Gutierrez	Calle 123	89218219	n
 Juan Marco	Cerrada 213	92173820	s
-Alondra MArtinez	Avenida 31	39192911	n
-Maria Flores	Calle 423	93932891	n
+María	calle 3	3828392	n
+Juan	col 423	3838292	s
+Alexa	cerrada 323	38391	s
+Fernando	privada 32	4883982	n
+Martin	calle 42	48447382	n
+Felipe	avenida 332	444728291	s
+Ximena	cerrada 423	343839249	n
+Ultimo	cale ultimo	337483928	s

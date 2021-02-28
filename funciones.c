@@ -47,3 +47,60 @@ nodo *recorrerNodo(nodo *pt){
 
 	return pt;
 }
+
+//TODO Agregar info
+
+void imprimirCovid(nodo *pt){
+	nodo *aux;
+	
+	aux=pt;
+	if(pt==NULL){
+		printf("La Lista esta vacía\n");
+	}else{
+		do{
+			if(aux->paciente.covid==115){
+				imprimirActual(aux);
+			}
+			aux=aux->next;
+		}while(aux!=pt);
+	}
+
+	return;
+}
+
+//TODO Agregar info
+
+void modificarActual(nodo *pt){
+	printf("Nombre del Alumno: ");
+	scanf(" %[^\n]", pt->paciente.nombre);
+	printf("Dirección del alumno: ");
+	scanf(" %[^\n]", pt->paciente.direccion);
+	printf("Teléfono del alumno: ");
+	scanf(" %i", &pt->paciente.telefono);
+	printf("Tiene covid (s/n): ");
+	scanf(" %c", &pt->paciente.covid);
+
+	return;
+}
+
+//TODO Agregar info
+
+void guardarBinario(nodo *pt){
+	FILE *fp;
+	nodo *aux;
+
+	aux=pt;
+	fp=fopen("pacientes.bin", "wb");
+	if(fp==NULL){
+		printf("ERROR: Archivo no diponible\n");
+		exit(1);
+	}
+	do{
+		fwrite(&aux->paciente, sizeof(info), 1, fp);
+		aux=aux->next;
+	}while(aux!=pt);
+	fclose(fp);
+	printf("Archivo guardado\n");
+
+	return;
+}
