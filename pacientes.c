@@ -19,25 +19,31 @@ int main(int argc, char *argv[]){
 	info alumno;
 	nodo *inicio;
 	FILE *fp;
-	int i=0, j;
+	int i=0,j;
 	
 	inicio=NULL;
 	printf("-----Catálogo de alumnos------\n");
 	if(strcmp(argv[1],"-t")==0){
-		printf("Leyendo archivo %s\n", argv[2]);
-		fp=fopen(argv[2], "r");
+		printf("Leyendo archivo pacientes.txt\n");
+		fp=fopen("pacientes.txt", "r");
 		if(fp==NULL){
 			printf("Archivo no disponible\n");
 			exit(1);
 		}
-		while(fscanf(fp, "%[^\t] %[^\t] %i %c \n", alumno.nombre, alumno.direccion, &alumno.telefono, &alumno.covid)==4){
-			inicio=anexarNodo(alumno, inicio);
-			i++;
+		fclose(fp);
+		for(j=0;j<=26;j++){
+			fp=fopen("pacientes.txt", "r");
+			while(fscanf(fp, "%[^\t] %[^\t] %i %c \n", alumno.nombre, alumno.direccion, &alumno.telefono, &alumno.covid)==4){
+				if(alumno.nombre[0]==65+j){
+					inicio=anexarNodo(alumno, inicio);
+					i++;
+				}
+			}
+			fclose(fp);
 		}
 		printf("Se leyeron %i alumnos\n", i);
-		fclose(fp);
 	}else if(strcmp(argv[1],"-b")==0){
-		printf("Recuperando catálogo guardado\n");
+		printf("Leydendo archvio pacientes.bin\n");
 		fp=fopen("pacientes.bin", "rb");
 		if(fp==NULL){
 			printf("Archivo no disponible\n");

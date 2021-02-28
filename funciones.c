@@ -10,6 +10,7 @@
 
 nodo *anexarNodo(info dat, nodo *pt){
 	nodo *aux, *nuevo;
+	int letra=65;
 
 	aux=pt;
 	nuevo=(nodo *)malloc(sizeof(nodo));
