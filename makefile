@@ -1,3 +1,5 @@
+#Archivo Makefile usado para compilar el programa en pacientes.exe
+
 pcientes.exe:pacientes.o funciones.o
 	gcc pacientes.o funciones.o -o pacientes.exe
 

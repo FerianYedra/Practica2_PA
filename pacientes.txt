@@ -1,10 +1,10 @@
 Alejando Gutierrez	Calle 123	89218219	n
 Juan Marco	Cerrada 213	92173820	s
-María	calle 3	3828392	n
-Juan	col 423	3838292	s
-Alexa	cerrada 323	38391	s
-Fernando	privada 32	4883982	n
-Martin	calle 42	48447382	n
-Felipe	avenida 332	444728291	s
-Ximena	cerrada 423	343839249	n
-Ultimo	cale ultimo	337483928	s
+María	Calle 3	3828392	n
+Juan	Col 423	3838292	s
+Alexa	Cerrada 323	38391	s
+Fernando	Privada 32	4883982	n
+Martin	Calle 42	48447382	n
+Felipe	Avenida 332	444728291	s
+Ximena	Cerrada 423	343839249	n
+Ultimo	Calle ultimo	337483928	s
