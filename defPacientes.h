@@ -5,7 +5,7 @@
  *	  para los nodos (nodo).
  * @author Fernando Ian Yedra Lavalle
  * @date 28/02/2021
-
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
